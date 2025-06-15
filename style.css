@@ -1,0 +1,679 @@
+
+/* ---------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', 'Helvitica';
+  color: white;
+  transition: 0.5s all;
+}
+
+body {
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
+.btn {
+    background-color: #0f1217;
+    color: gray;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    box-shadow: 0 0 5px lightgray;
+    cursor: pointer;
+}
+
+/* --------------------------- NavBar -------------------------------- */
+
+.container header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+  background-color: rgba(75, 75, 75, 0.36);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  transition: 1s ease both;
+}
+
+.left-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.left-header img {
+  width: 50px;
+}
+
+.left-header button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: black;
+}
+
+.right-header {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-header li {
+  margin: 0 5px;
+}
+
+.right-header li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger {
+  display: none; /* Hidden on larger screens */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* --------------------------- Hero -------------------------------- */
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.next-btn {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    border-radius: 50%;
+    background-color: #edff66;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.gaming-text {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+}
+
+.hero-vid {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-vid video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-info {
+    z-index: 1;
+    position: absolute;
+    top: 5rem;
+    left: 4rem;
+}
+
+.hero-info h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5rem;
+}
+
+.hero-info p {
+    max-width: 220px;
+    margin: 1rem 0;
+}
+
+.hero-info button {
+    background-color: #edff66;
+    color: black;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 2px solid #edff66;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.hero-info button:hover {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 15px yellow;
+}
+
+/* --------------------------- About -------------------------------- */
+
+.about-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5rem 0;
+}
+
+.image-box {
+    width: 360px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;    
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-section h1 {
+    margin: 1rem 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    max-width: 1000px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4acfee, #58fec9, #02d79a, #2a46ff, #0099ff, #02d79a);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation-gradient 2.5s linear infinite;
+}
+
+@keyframes animation-gradient {
+    100% {
+        background-position: 200%;
+    }
+}
+
+.about-section h4 {
+    margin: 1.5rem 3rem;
+    text-align: center;
+}
+
+.about-section h5 {
+    color: gray;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 2rem;
+}
+
+/* ----------------------------- info ------------------------------- */
+
+.info-section {
+    padding: 5rem;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(4, 50vh);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 5px white;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px lightgray;
+}
+
+.card:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+.card:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.card:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.card:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.card:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+.card:nth-child(6) {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+.card video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card h1 {
+    max-width: 10rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4acfee, #58fec9, #02d79a, #2a46ff, #0099ff, #02d79a);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation-gradient 2.5s linear infinite;
+    z-index: 1;
+}
+
+.card p {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    color: gray;
+    z-index: 1;
+    max-width: 20rem;
+}
+
+.card button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+
+.card button:hover {
+    opacity: 0.7;
+    box-shadow: 0 0 15px lightgray;
+}
+
+/* ----------------------------- contact ------------------------------- */
+
+.contact-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 4rem auto;
+}
+
+.contact-section h1 {
+    margin: 4rem 0;
+    max-width: 40vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4acfee, #58fec9, #02d79a, #2a46ff, #0099ff, #02d79a);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation-gradient 2.5s linear infinite;
+    z-index: 1;
+    text-align: center;
+}
+
+.img1, .img2, .img3 {
+    position: absolute;
+}
+
+.img1 {
+    top: 0;
+    left: 0;
+    clip-path: polygon(59% 10%, 100% 38%, 85% 95%, 23% 86%, 0% 38%);
+    height: 200px;
+    width: auto;
+}
+
+.img2 {
+    top: 0;
+    right: 0;
+    clip-path: polygon(29% 0, 100% 3%, 75% 100%, 0% 100%);
+    height: 400px;
+    width: auto;
+}
+
+.img3 {
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(39% 0, 92% 0, 100% 50%, 74% 100%, 21% 100%, 0% 50%);
+    height: 200px;
+    width: auto;
+}
+
+
+
+/* --------------- Auto Blur animation -------------- */
+
+.autoBlur {
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(40px);
+    }
+    40%, 60% {
+        filter: blur(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        filter: blur(40px);
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+/* --------------- Full screen animation -------------- */
+
+.autoTakeFull {
+    animation: autoTakeFullAnimation both;
+    animation-timeline: view(60% 70%);
+}
+
+@keyframes autoTakeFullAnimation {
+    to {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        margin-bottom: 200px;
+    }
+}
+
+/* --------------- Auto display animation -------------- */
+
+.autoDisplay {
+    animation: autoDisplayAnimation both;
+    animation-timeline: view(80% 5%);
+}
+
+@keyframes autoDisplayAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* ----------------- Media Queries ----------------- */
+
+@media (max-width: 768px) {
+    .gaming-text {
+        font-size: 2rem;
+    }
+    
+    .hero-info h1 {
+        font-size: 3rem;
+    }
+
+    .hero-info p {
+        font-size: 1rem;
+    }
+
+    .about-section h1 {
+        font-size: 3rem;
+    }
+
+    .card h1 {
+        font-size: 2rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+        max-width: 10rem;
+    }
+
+    .contact-section h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .img1 {
+        height: 100px;
+    }
+
+    .img2 {
+        top: 30%;
+        height: 200px;
+    }
+
+    .img3 {
+        height: 100px;
+    }
+}
+
+@media (max-width: 700px) {
+    .card:nth-child(1) {
+        grid-column: 1 / 2; 
+        grid-row: 1 / 2; 
+    }
+     .info-cards {
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: repeat(6, 50vh); /* 6 rows, height based on content */
+        gap: 10px; /* Optional: smaller gap for consistency */
+    }
+
+    .card:nth-child(2),
+    .card:nth-child(3),
+    .card:nth-child(4),
+    .card:nth-child(5),
+    .card:nth-child(6) {
+        grid-column: 1 / 2; /* All cards in the single column */
+        grid-row: auto;
+    }
+
+    .card {
+        min-height: 150px; /* Ensure cards have a minimum height */
+    }
+
+
+  .container header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .right-header {
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); /* Off-screen to the left */
+    padding: 4rem 0;
+    opacity: 0; /* Hidden by default */
+    transition: 0.3s ease-in-out all; /* Smooth slide and fade */
+    
+    background-color: rgba(75, 75, 75, 0.854);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px); /* For Safari compatibility */
+  }
+
+  .right-header.active {
+    transform: translateX(0); /* Slide in */
+    opacity: 1; /* Fully visible */
+  }
+
+  .right-header li {
+    margin: 5px 0;
+  }
+
+  .right-header li a {
+    font-size: 0.9rem;
+    display: block;
+    padding: 5px;
+  }
+
+  .left-header .hamburger {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+  }
+
+}
+
+
+
+/* ------------------------------------------------------------ */
+
+
+
+
+
+    
+@media (max-width: 480px) {
+
+    .container header {
+      padding: 0.5rem 1rem;
+    }
+  
+    .left-header img {
+      width: 35px;
+    }
+  
+    .left-header button {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      margin-left: 0;
+    }
+    .hero-info {
+        left: 1rem;
+    }
+
+    .gaming-text {
+        right: 1rem;
+    }
+
+    .next-btn {
+        width: 5rem;
+        height: 5rem;
+        top: 55%;
+        left: 35%;
+        font-size: 1rem;
+    }
+
+   .about-section h1 {
+        font-size: 2rem;
+        max-width: 20rem;
+    }
+
+    .image-box {
+        width: 260px;
+        height: 300px;
+    }
+
+    .info-section {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .card h1 {
+        max-width: 10rem;
+        top: 0.5rem;
+        left: 2rem;
+        font-size: 2rem;
+    }
+
+    .card p {
+        top: 4rem;
+        left: 2rem;
+        max-width: 20rem;
+    }
+
+    .card button {
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .img1 {
+        height: 70px;
+    }
+
+    .img2 {
+        top: 20%;
+        height: 100px;
+    }
+
+    .img3 {
+        height: 70px;
+    }
+
+    .contact-section h1 {
+        max-width: 12rem;
+    }
+
+
+}
+
